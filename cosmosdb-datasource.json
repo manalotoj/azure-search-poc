@@ -1,0 +1,10 @@
+{   
+    "name" : "cosmosdb-datasource",  
+    "description" : "documents",  
+    "type" : "cosmosdb",
+    "credentials" :
+    { "connectionString" :
+      "{{cosmosDbConnString}}"
+    },  
+    "container" : { "name" : "metadata" }
+}  

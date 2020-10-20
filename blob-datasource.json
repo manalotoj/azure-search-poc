@@ -1,0 +1,10 @@
+{   
+    "name" : "blob-datasource",  
+    "description" : "documents",  
+    "type" : "azureblob",
+    "credentials" :
+    { "connectionString" :
+      "{{storageConnString}}"
+    },  
+    "container" : { "name" : "cog-search-demo" }
+}  

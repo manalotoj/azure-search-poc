@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "bcb6355a-d477-44be-aa4e-587e7d53b01f",
+		"name": "A-HRB-CogSearch-POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.0 Create idx-demo Index",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{searchApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"idx-demo\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"content\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_content_type\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": false,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_size\",\r\n            \"type\": \"Edm.Int64\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": false,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_last_modified\",\r\n            \"type\": \"Edm.DateTimeOffset\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_name\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_path\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": true,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_storage_file_extension\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_content_type\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"metadata_title\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"tags\",\r\n            \"type\": \"Collection(Edm.String)\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": true,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"idFromSource\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"source\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": true,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"title\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"type\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": true,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"category\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": true,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": true,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"description\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": true,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": \"standard.lucene\",\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"otherFields\",\r\n            \"type\": \"Collection(Edm.String)\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"id\",\r\n            \"type\": \"Edm.String\",\r\n            \"searchable\": false,\r\n            \"filterable\": false,\r\n            \"retrievable\": true,\r\n            \"sortable\": false,\r\n            \"facetable\": false,\r\n            \"key\": false,\r\n            \"indexAnalyzer\": null,\r\n            \"searchAnalyzer\": null,\r\n            \"analyzer\": null,\r\n            \"synonymMaps\": []\r\n        },\r\n        {\r\n            \"name\": \"dateAdded\",\r\n            \"type\": \"Edm.ComplexType\",\r\n            \"fields\": [\r\n                {\r\n                    \"name\": \"date\",\r\n                    \"type\": \"Edm.String\",\r\n                    \"searchable\": false,\r\n                    \"filterable\": false,\r\n                    \"retrievable\": true,\r\n                    \"sortable\": true,\r\n                    \"facetable\": false,\r\n                    \"key\": false,\r\n                    \"indexAnalyzer\": null,\r\n                    \"searchAnalyzer\": null,\r\n                    \"analyzer\": null,\r\n                    \"synonymMaps\": []\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{searchAccount}}.search.windows.net/indexes?api-version={{searchApiVersion}}",
+					"protocol": "https",
+					"host": [
+						"{{searchAccount}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{searchApiVersion}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.0 Create Blob Storage Data Source",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"value": "{{searchApiKey}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\" : \"blob-datasource\",  \r\n    \"description\" : \"documents\",  \r\n    \"type\" : \"azureblob\",\r\n    \"credentials\" :\r\n    { \"connectionString\" :\r\n      \"{{storageConnString}}\"\r\n    },  \r\n    \"container\" : { \"name\" : \"cog-search-demo\" }\r\n}  ",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://{{searchAccount}}.search.windows.net/datasources?api-version={{searchApiVersion}}",
+					"protocol": "https",
+					"host": [
+						"{{searchAccount}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"datasources"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{searchApiVersion}}"
+						}
+					]
+				},
+				"description": "cognitive search"
+			},
+			"response": []
+		},
+		{
+			"name": "2.1 Create Cosmos DB Data Source",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"value": "{{searchApiKey}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\" : \"cosmosdb-datasource\",  \r\n    \"description\" : \"documents\",  \r\n    \"type\" : \"cosmosdb\",\r\n    \"credentials\" :\r\n    { \"connectionString\" :\r\n      \"{{cosmosDbConnString}}\"\r\n    },  \r\n    \"container\" : { \"name\" : \"metadata\" }\r\n}  ",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://{{searchAccount}}.search.windows.net/datasources?api-version={{searchApiVersion}}",
+					"protocol": "https",
+					"host": [
+						"{{searchAccount}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"datasources"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{searchApiVersion}}"
+						}
+					]
+				},
+				"description": "cognitive search"
+			},
+			"response": []
+		},
+		{
+			"name": "3.1 Create blob storage indexer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{searchApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"@odata.context\": \"https://cogsearchjqm.search.windows.net/$metadata#indexers/$entity\",\r\n    \"@odata.etag\": \"\\\"0x8D8751AAC7F8855\\\"\",\r\n    \"name\": \"blob-indexer\",\r\n    \"dataSourceName\": \"blob-datasource\",\r\n    \"targetIndexName\": \"idx-demo\",\r\n    \"schedule\": {\r\n        \"interval\": \"PT1H\",\r\n        \"startTime\": \"2020-10-20T17:07:37.746Z\"\r\n    },\r\n    \"parameters\": {\r\n        \"batchSize\": null,\r\n        \"maxFailedItems\": 0,\r\n        \"maxFailedItemsPerBatch\": 0,\r\n        \"base64EncodeKeys\": null,\r\n        \"configuration\": {\r\n            \"dataToExtract\": \"contentAndMetadata\",\r\n            \"parsingMode\": \"default\"\r\n        }\r\n    },\r\n    \"fieldMappings\": [\r\n        {\r\n            \"sourceFieldName\": \"metadata_storage_path\",\r\n            \"targetFieldName\": \"metadata_storage_path\",\r\n            \"mappingFunction\": {\r\n                \"name\": \"base64Encode\",\r\n                \"parameters\": null\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://{{searchAccount}}.search.windows.net/indexers?api-version={{searchApiVersion}}",
+					"protocol": "https",
+					"host": [
+						"{{searchAccount}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{searchApiVersion}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 Create Cosmos DB indexer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{searchApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"@odata.context\": \"https://cogsearchjqm.search.windows.net/$metadata#indexers/$entity\",\r\n    \"@odata.etag\": \"\\\"0x8D8751AAC7F8855\\\"\",\r\n    \"name\": \"cosmosdb-indexer\",\r\n    \"dataSourceName\": \"cosmosdb-datasource\",\r\n    \"targetIndexName\": \"idx-demo\",\r\n    \"schedule\": {\r\n        \"interval\": \"PT1H\",\r\n        \"startTime\": \"2020-10-20T17:07:37.746Z\"\r\n    },\r\n    \"parameters\": {\r\n        \"batchSize\": null,\r\n        \"maxFailedItems\": 0,\r\n        \"maxFailedItemsPerBatch\": 0,\r\n        \"base64EncodeKeys\": null,\r\n        \"configuration\": {}\r\n    },\r\n    \"fieldMappings\": [],\r\n    \"outputFieldMappings\": []\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://{{searchAccount}}.search.windows.net/indexers?api-version={{searchApiVersion}}",
+					"protocol": "https",
+					"host": [
+						"{{searchAccount}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{searchApiVersion}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

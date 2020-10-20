@@ -1,0 +1,17 @@
+{
+    "name": "cosmosdb-indexer",
+    "dataSourceName": "cosmosdb-datasource",
+    "targetIndexName": "idx-demo",
+    "schedule": {
+        "interval": "PT1H"
+    },
+    "parameters": {
+        "batchSize": null,
+        "maxFailedItems": 0,
+        "maxFailedItemsPerBatch": 0,
+        "base64EncodeKeys": null,
+        "configuration": {}
+    },
+    "fieldMappings": [],
+    "outputFieldMappings": []
+}
