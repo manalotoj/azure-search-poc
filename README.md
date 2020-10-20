@@ -21,7 +21,7 @@ Import the [Postman collection](https://github.com/manalotoj/azure-search-poc/bl
 The collection relies on the following <b>Environment Variables</b>:
 
 | Variable           | Description                    |
-| ------------------ |:------------------------------:|
+| ------------------ | ------------------------------ |
 | searchAccount      | your search account name
 | searchApiVersion   | 2019-05-06
 | searchApiKey       | primary API key for search account
